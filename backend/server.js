@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static("uploads")); // serve uploaded images
 
 mongoose.connect("mongodb://localhost:27017/guru", {
   useNewUrlParser: true,
@@ -24,6 +25,9 @@ if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
 app.use("/api/auth", require("./routes/authRoutes"));
 const studentRoutes = require("./routes/studentRoutes");
 app.use("/api/student", studentRoutes); // ✅ correct
+const facultyRoutes = require("./routes/facultyRoutes");
+
+app.use("/api/faculty", facultyRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -4,62 +4,6 @@ const Application = require("../models/Application");
 const Certificate = require("../models/Certificate");
 
 
-exports.getProfile = async (req, res) => {
-  try {
-    // Fetching the student using the user ID from the JWT token
-    const student = await Student.findById(req.user.id);
-    if (!student) return res.status(404).json({ message: "Student not found" });
-    
-    res.json(student);
-  } catch (err) {
-    res.status(500).json({ message: "Server error" });
-  }
-};
-
-exports.updateProfile = async (req, res) => {
-  const {
-    name,
-    contact,
-    academicDetails,
-    address,
-    dateOfBirth,
-    gender,
-    course,
-    yearOfStudy,
-    universityName,
-    skills,
-    experience,
-    profilePicture,
-  } = req.body;
-
-  try {
-    const student = await Student.findById(req.user.id);
-    if (!student) return res.status(404).json({ message: "Student not found" });
-
-    // Update the student's details
-    student.name = name || student.name;
-    student.contact = contact || student.contact;
-    student.academicDetails = academicDetails || student.academicDetails;
-    student.address = address || student.address;
-    student.dateOfBirth = dateOfBirth || student.dateOfBirth;
-    student.gender = gender || student.gender;
-    student.course = course || student.course;
-    student.yearOfStudy = yearOfStudy || student.yearOfStudy;
-    student.universityName = universityName || student.universityName;
-    student.skills = skills || student.skills;
-    student.experience = experience || student.experience;
-    student.profilePicture = profilePicture || student.profilePicture;
-
-    // Save the updated profile
-    await student.save();
-    
-    res.json(student); // Return the updated student profile
-  } catch (err) {
-    res.status(500).json({ message: "Error updating profile" });
-  }
-};
-
-
 exports.getInternships = async (req, res) => {
   try {
     const internships = await Internship.find();

@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-const JWT_SECRET = "ashwinidummi"; // Ideally, store this in environment variables
+const JWT_SECRET = process.env.JWT_SECRET || "ashwinidummi"; // Store in env variables for security
 
 // @desc    Register a new user
 // @route   POST /api/auth/register
@@ -38,11 +38,11 @@ exports.registerUser = async (req, res) => {
 // @route   POST /api/auth/login
 // @access  Public
 exports.loginUser = async (req, res) => {
-  const { email, password, role } = req.body;
+  const { username, password, role } = req.body;
 
   try {
-    // Find user by email and role
-    const user = await User.findOne({ email, role });
+    // Find user by username and role
+    const user = await User.findOne({ username, role });
     if (!user) return res.status(404).json({ message: "User not found" });
 
     // Compare password

@@ -8,8 +8,14 @@ const internshipSchema = new mongoose.Schema({
   startDate: { type: Date },
   endDate: { type: Date },
   skillsRequired: [String],
-  studentsApplied: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  
+  // Reference to the Faculty overseeing the internship
+  facultyId: { type: mongoose.Schema.Types.ObjectId, ref: "Faculty", required: true },
+  
+  // Reference to the students who applied for the internship
+  studentsApplied: [{ type: mongoose.Schema.Types.ObjectId, ref: "Student" }],
 });
 
 const Internship = mongoose.model("Internship", internshipSchema);
+
 module.exports = Internship;
