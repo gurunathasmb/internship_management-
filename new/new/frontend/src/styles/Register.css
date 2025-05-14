@@ -1,0 +1,89 @@
+/* Background */
+.register-bg {
+  min-height: 100vh;
+  background: #f3f6fa url("https://www.transparenttextures.com/patterns/symphony.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* Registration Panel */
+.register-panel {
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 14px;
+  box-shadow: 0 2px 18px rgba(80, 110, 140, 0.1);
+  width: 540px;
+  padding: 40px 48px;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.register-panel h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Labels and Inputs */
+.register-panel label {
+  display: block;
+  font-size: 1.18rem;
+  color: #444;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.register-panel input,
+.register-panel select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 40px 18px 20px;
+  border: 1px solid #d1dbe6;
+  border-radius: 6px;
+  font-size: 1.18rem;
+  background: #f8fcff;
+  box-shadow: 0 2px 8px rgba(180, 210, 240, 0.08);
+  transition: border 0.2s, box-shadow 0.2s;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.register-panel input:focus,
+.register-panel select:focus {
+  border: 1.5px solid #a2c9f7;
+  outline: none;
+  background: #f4faff;
+  box-shadow: 0 0 6px #b7d8fa;
+}
+
+/* Submit Button */
+.register-panel button {
+  background: linear-gradient(to bottom, #8ec5fc 0%, #3b82f6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 12px 38px;
+  font-size: 1.12rem;
+  font-weight: 500;
+  margin-top: 30px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(80,110,140,0.08);
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.register-panel button:hover {
+  background: linear-gradient(to bottom, #6ea8fe 0%, #2563eb 100%);
+  box-shadow: 0 4px 12px rgba(80,110,140,0.13);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .register-panel {
+    width: 98vw;
+    padding: 30px 20px;
+  }
+}

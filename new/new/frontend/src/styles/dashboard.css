@@ -1,0 +1,256 @@
+:root {
+    --primary: #3b82f6;
+    --primary-light: #8ec5fc;
+    --primary-bg: #f3f6fa;
+    --sidebar-bg: #f6fafd;
+    --sidebar-active: #e3e6ea;
+    --border: #e3e6ea;
+    --shadow: 0 2px 18px rgba(80, 110, 140, 0.08);
+    --radius: 14px;
+    --text-main: #223;
+    --text-secondary: #444;
+    --accent: #2563eb;
+    --muted: #8ebbe9;
+    --font-main: 'Times New Roman', Times, serif;
+  }
+  
+  /* Full page white container */
+  body, html, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+  
+  .student-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #fff;
+    font-family: var(--font-main);
+  }
+  
+  /* Sidebar */
+  .student-sidebar {
+    width: 240px;
+    background: var(--sidebar-bg);
+    border-right: 1.5px solid var(--border);
+    box-shadow: 2px 0 16px rgba(80, 110, 140, 0.04);
+    padding: 36px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .student-sidebar h1 {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 32px 32px;
+    letter-spacing: 1px;
+  }
+  
+  .student-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 0 0 12px;
+  }
+  
+  .student-nav a {
+    display: block;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.09rem;
+    text-decoration: none;
+    padding: 12px 24px 12px 30px;
+    border-radius: 0 24px 24px 0;
+    transition: background 0.16s, color 0.16s;
+    margin-right: 20px;
+  }
+  
+  .student-nav a.active,
+  .student-nav a:hover {
+    background: var(--primary-light);
+    color: #fff;
+  }
+  
+  /* Main content area */
+  .student-main-content {
+    flex: 1;
+    padding: 48px 56px 48px 56px;
+    background: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 900px) {
+    .student-sidebar {
+      width: 68px;
+      padding-top: 16px;
+    }
+    .student-sidebar h1 {
+      font-size: 1.1rem;
+      margin-left: 8px;
+      margin-bottom: 20px;
+    }
+    .student-nav a {
+      font-size: 0.95rem;
+      padding: 10px 10px 10px 16px;
+      margin-right: 0;
+    }
+    .student-main-content {
+      padding: 18px 6vw 18px 6vw;
+    }
+  }
+  
+  /* Section Headings */
+  .student-main-content h2, 
+  .student-main-content h3, 
+  .student-main-content h4 {
+    color: var(--primary);
+    margin-top: 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Forms and Cards */
+  .student-main-content form,
+  .student-main-content .internship-card,
+  .student-main-content .announcement-list,
+  .student-main-content .certificate-list {
+    background: var(--sidebar-bg);
+    padding: 24px 28px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 8px rgba(120,140,160,0.07);
+    margin-bottom: 24px;
+  }
+  
+  .student-main-content label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 1.06rem;
+  }
+  
+  .student-main-content input[type="text"],
+  .student-main-content input[type="email"],
+  .student-main-content input[type="file"],
+  .student-main-content textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1.08rem;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    background: #f8fcff;
+    transition: border 0.2s, box-shadow 0.2s;
+    font-family: var(--font-main);
+  }
+  
+  .student-main-content input[type="text"]:focus,
+  .student-main-content input[type="email"]:focus,
+  .student-main-content textarea:focus {
+    border: 1.5px solid var(--primary-light);
+    outline: none;
+    background: #f4faff;
+    box-shadow: 0 0 8px var(--primary-light);
+  }
+  
+  .student-main-content button,
+  .student-main-content input[type="submit"] {
+    background: linear-gradient(to bottom, var(--primary-light) 0%, var(--primary) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 32px;
+    font-size: 1.08rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(80,110,140,0.08);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+  }
+  
+  .student-main-content button:hover {
+    background: linear-gradient(to bottom, var(--primary) 0%, #2563eb 100%);
+    box-shadow: 0 4px 16px rgba(80,110,140,0.12);
+  }
+  
+  /* Internship Cards */
+  .internship-card {
+    margin-bottom: 18px;
+  }
+  
+  .internship-card h4 {
+    margin: 0 0 8px 0;
+    color: var(--primary);
+  }
+  
+  .internship-card p {
+    margin: 0 0 6px 0;
+    color: var(--text-secondary);
+  }
+  
+  /* Application Table */
+  .student-main-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: var(--sidebar-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(120,140,160,0.07);
+  }
+  
+  .student-main-content th, .student-main-content td {
+    border: 1px solid var(--border);
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 1.04rem;
+  }
+  
+  .student-main-content th {
+    background: var(--primary-light);
+    color: #fff;
+  }
+  
+  /* Announcements */
+  .announcement-list li {
+    margin-bottom: 8px;
+    color: var(--text-main);
+  }
+  
+  /* Certificates list */
+  .certificate-list a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  
+  .certificate-list a:hover {
+    color: var(--primary);
+  }
+  
+  .logout-btn {
+    margin: auto 24px 36px 24px;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 22px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
+    width: calc(100% - 48px);
+  }
+  
+  .logout-btn:hover {
+    background: #2563eb;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.8);
+  }

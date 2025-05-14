@@ -25,9 +25,8 @@ if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
 app.use("/api/auth", require("./routes/authRoutes"));
 const studentRoutes = require("./routes/studentRoutes");
 app.use("/api/student", studentRoutes); // ✅ correct
-const facultyRoutes = require("./routes/facultyRoutes");
 
-app.use("/api/faculty", facultyRoutes);
-
+const companyRoutes = require('./routes/companyRoutes');
+app.use('/api/company', companyRoutes);
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
